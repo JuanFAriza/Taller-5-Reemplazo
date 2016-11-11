@@ -12,13 +12,14 @@ vz = np.array([1.273504997,-0.198268558,0.000330572,0.014760239,-0.054374153,0.0
 x = np.log(np.sqrt(x_0**2 + y_0**2 + z_0**2))
 y = np.log(np.sqrt(vx**2 + vy**2 + vz**2))
 
-N = 10**4
+N = 10**5
+G = 4*np.pi**2
 
 delta_m = 0.1
 delta_b = 0.1
 
 m0 = -0.5
-b0 = 2
+b0 = 3
 
 m = np.array([m0],dtype='float')
 b = np.array([b0],dtype='float')
@@ -46,7 +47,7 @@ for i in range(N):
 print "Alfa es "
 print np.median(m)*(-2)+1
 print "  Log masa del sol es "
-print 2*np.mean(b) - np.log(const.G)
+print 2*np.mean(b) - np.log(G)
 plt.scatter(x,y)
 x_list = np.linspace(x.min(),x.max(),100)
 plt.plot(x_list,np.median(m)*x_list+np.median(b))

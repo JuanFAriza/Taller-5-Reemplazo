@@ -43,6 +43,10 @@ for i in range(N):
         m = np.append(m,m[i])
         b = np.append(b,b[i])
 
+print "Alfa es "
+print np.median(m)*(-2)+1
+print "  Log masa del sol es "
+print 2*np.mean(b) - np.log(const.G)
 plt.scatter(x,y)
 x_list = np.linspace(x.min(),x.max(),100)
 plt.plot(x_list,np.median(m)*x_list+np.median(b))
